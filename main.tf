@@ -10,7 +10,7 @@ terraform {
 provider "docker" {
   host    = "unix:///var/run/docker.sock"
 }
-resource "docker_container" "yogeshnainlocal" {
+resource "docker_container" "amakundu/moe-php-mysql-demo:1.0.0" {
   image = "amakundu/moe-php-mysql-demo:1.0.0"
   name  = "moe-php-mysql-app"
   restart = "always"
