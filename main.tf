@@ -20,7 +20,7 @@ resource "docker_container" "yogeshnainlocal" {
     external = 8089
   }
   volumes {
-    host_path      = "."
+    host_path      = "/var/lib/jenkins/workspace/php"
     container_path = "/var/www/html"
   }
 
