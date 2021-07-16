@@ -13,11 +13,15 @@ provider "docker" {
 }
 resource "docker_container" "yogeshnainlocal" {
   image = "yogeshnainlocal:latest"
-  name  = "yogeshnainlocal"
+  name  = "yogeshnainlocal" 
   restart = "always"
     ports {
     internal = 80
     external = 8089
+  }
+  volumes {
+    host_path      = "${pwd}"
+    container_path = "/var/www/html"
   }
 
 }
