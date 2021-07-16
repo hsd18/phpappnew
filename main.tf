@@ -12,7 +12,7 @@ provider "docker" {
 }
 resource "docker_container" "yogeshnainlocal" {
   image = "amakundu/moe-php-mysql-demo:1.0.0"
-  name  = "amakundu/moe-php-mysql-demo:1.0.0"
+  name  = "moe-php-mysql-app"
   restart = "always"
     ports {
     internal = 80
