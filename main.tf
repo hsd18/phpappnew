@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     docker = {
@@ -10,9 +11,9 @@ terraform {
 provider "docker" {
   host    = "unix:///var/run/docker.sock"
 }
-resource "docker_container" "amakundu/moe-php-mysql-demo:1.0.0" {
-  image = "amakundu/moe-php-mysql-demo:1.0.0"
-  name  = "moe-php-mysql-app"
+resource "docker_container" "yogeshnainlocal" {
+  image = "yogeshnainlocal:latest"
+  name  = "yogeshnainlocal"
   restart = "always"
     ports {
     internal = 80
