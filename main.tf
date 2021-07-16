@@ -20,7 +20,7 @@ resource "docker_container" "yogeshnainlocal" {
     external = 8089
   }
   volumes {
-    host_path      = "${pwd}"
+    host_path      = "$(pwd)"
     container_path = "/var/www/html"
   }
 
