@@ -11,8 +11,8 @@ provider "docker" {
   host    = "unix:///var/run/docker.sock"
 }
 resource "docker_container" "yogeshnainlocal" {
-  image = "yogeshnainlocal:latest"
-  name  = "yogeshnainlocal"
+  image = "amakundu/moe-php-mysql-demo:1.0.0"
+  name  = "amakundu/moe-php-mysql-demo:1.0.0"
   restart = "always"
     ports {
     internal = 80
