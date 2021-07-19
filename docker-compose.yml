@@ -3,7 +3,7 @@ services:
   php:
     build: 
       context: .
-    image: amakundu/moe-php-mysql-demo:1.0.0
+      dockerfile: ./Dockerfile
     networks:
       - frontend
       - backend
@@ -13,8 +13,8 @@ services:
       - MYSQL_PASSWORD=moepass
       - MYSQL_DB=moe_db
     volumes:
-      - .:/var/www/html/
-      - ./employees.sql:/docker-entrypoint-initdb.d/employees.sql 
+      - .:/var/www/html/:wq
+      
     ports:
       - "30001:80"
     container_name: moe-php-app
