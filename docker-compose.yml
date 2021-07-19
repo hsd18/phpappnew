@@ -3,7 +3,7 @@ services:
   php:
     build: 
       context: .
-    image: ./Dockerfile
+    image: amakundu/moe-php-mysql-demo:1.0.0
     networks:
       - frontend
       - backend
