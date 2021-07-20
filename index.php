@@ -51,7 +51,8 @@
                 <a href="#about" class="btn btn-secondary">About</a>
                 <a href="#contact" class="btn btn-success">Contact</a>
                 <a class="btn btn-warning" href="#signup">Sign Up</a>
-                
+                <a class="btn btn-warning" href="#signup">New tab1 </a>
+                <a class="btn btn-warning" href="#signup">New tab2</a>                
             </div>
         </div>
     </nav>
