@@ -14,7 +14,6 @@ services:
       - MYSQL_DB=moe_db
     volumes:
       - .:/var/www/html/
-      
     ports:
       - "30001:80"
     container_name: moe-php-app
