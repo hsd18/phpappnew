@@ -11,6 +11,3 @@ RUN mkdir /app \
 COPY . /app/moe-php-mysql-demo/www/
 
 RUN cp -r /app/moe-php-mysql-demo/www/* /var/www/html/.
-
-EXPOSE 8080
-EXPOSE 80
