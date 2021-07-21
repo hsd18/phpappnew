@@ -26,10 +26,7 @@ services:
       - MYSQL_USER=moeuser
       - MYSQL_PASSWORD=moepass 
       - MYSQL_DATABASE=moe_db
-    container_name: moe-mysql-app
-    volumes:
-      - .:/var/www/html/
-      - ./employees.sql:/docker-entrypoint-initdb.d/employees.sql
+    container_name: moe-mysql-app    
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
     depends_on:
