@@ -1,14 +1,18 @@
-version: "2"
+version: "3.9"
 services:
   php:
+    image: hsd18/phpdemo
     build:
       context: .
       dockerfile: ./Dockerfile
     networks:
       - frontend
       - backend
+    depends_on:
+      - mysql
+      - phpmyadmin
     environment:
-      - MYSQL_HOST=moe-mysql-app
+      - MYSQL_HOST=mysql
       - MYSQL_USER=moeuser
       - MYSQL_PASSWORD=moepass
       - MYSQL_DB=moe_db
@@ -16,7 +20,6 @@ services:
       - .:/var/www/html/
     ports:
       - "30001:80"
-    container_name: moe-php-app
   mysql:
     image: mysql:5.7
     networks:
@@ -26,7 +29,6 @@ services:
       - MYSQL_USER=moeuser
       - MYSQL_PASSWORD=moepass
       - MYSQL_DATABASE=moe_db
-    container_name: moe-mysql-app
     volumes:
       - .:/var/www/html/
       - ./employees.sql:/docker-entrypoint-initdb.d/employees.sql
@@ -39,11 +41,10 @@ services:
     ports:
       - "30002:80"
     environment:
-      - PMA_HOST=moe-mysql-app
+      - PMA_HOST=mysql
       - PMA_PORT= 3306
     volumes:
       - /sessions
-    container_name: moe-phpmyadmin-app
 networks:
   frontend:
   backend:
