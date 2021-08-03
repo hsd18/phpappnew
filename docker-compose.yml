@@ -24,6 +24,9 @@ services:
     image: mysql:5.7
     networks:
       - backend
+    deploy:
+      mode: replicated
+      replicas: 4
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
       - MYSQL_USER=moeuser
@@ -34,6 +37,9 @@ services:
       - ./employees.sql:/docker-entrypoint-initdb.d/employees.sql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
+    deploy:
+      mode: replicated
+      replicas: 4
     depends_on:
       - mysql
     networks:
